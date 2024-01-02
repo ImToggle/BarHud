@@ -1,7 +1,6 @@
 package me.imtoggle.barhud.mixin;
 
-import me.imtoggle.barhud.BarHud;
-import me.imtoggle.barhud.config.*;
+import me.imtoggle.barhud.huds.*;
 import net.minecraftforge.client.GuiIngameForge;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

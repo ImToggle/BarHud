@@ -10,22 +10,19 @@ open class Hud : BasicHud() {
 
     @Slider(
         name = "Width",
-        min = 0f, max = 500f,
-        step = 1
+        min = 0f, max = 200f,
     )
     var width = 80f
 
     @Slider(
         name = "Height",
-        min = 0f, max = 500f,
-        step = 1
+        min = 0f, max = 200f,
     )
     var height = 8f
 
     @Slider(
         name = "Animation Duration",
         min = 0f, max = 500f,
-        step = 1
     )
     var duration = 200f
 

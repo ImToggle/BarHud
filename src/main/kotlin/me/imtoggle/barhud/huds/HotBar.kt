@@ -1,4 +1,4 @@
-package me.imtoggle.barhud.config
+package me.imtoggle.barhud.huds
 
 import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.*
@@ -16,7 +16,7 @@ import net.minecraft.client.gui.spectator.SpectatorMenu
 import net.minecraft.client.gui.spectator.categories.SpectatorDetails
 import net.minecraftforge.client.GuiIngameForge
 
-object HotBar : Config(Mod("HotBar", ModType.HUD), "barhud/hotbar.json") {
+object HotBar : Config(Mod("HotBar", ModType.HUD, "/barhud.svg"), "barhud/hotbar.json") {
 
     @HUD(name = "Hud")
     var hud = HotBarHud()
@@ -85,7 +85,7 @@ object HotBar : Config(Mod("HotBar", ModType.HUD), "barhud/hotbar.json") {
 
         private fun drawSpec(x: Float, y: Float, menu: SpectatorMenu?, specAccessor: GuiSpectatorAccessor, guiAccessor: GuiAccessor, scaledResolution: ScaledResolution) {
             if (menu != null) {
-                val g: Float = specAccessor.alpha()
+                val g = specAccessor.alpha()
                 if (g <= 0.0f) {
                     menu.func_178641_d()
                 } else {

@@ -1,4 +1,4 @@
-package me.imtoggle.barhud.config
+package me.imtoggle.barhud.huds
 
 import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.*
@@ -10,7 +10,7 @@ import net.minecraft.entity.EntityLivingBase
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.item.ItemFood
 
-object Hunger: Config(Mod("Hunger", ModType.HUD), "barhud/hunger.json") {
+object Hunger: Config(Mod("Hunger", ModType.HUD, "/barhud.svg"), "barhud/hunger.json") {
 
     @HUD(name = "Hud")
     var hud = HungerHud()

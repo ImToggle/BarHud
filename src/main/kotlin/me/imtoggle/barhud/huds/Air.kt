@@ -1,4 +1,4 @@
-package me.imtoggle.barhud.config
+package me.imtoggle.barhud.huds
 
 import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.*
@@ -11,7 +11,7 @@ import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.util.MathHelper
 
 
-object Air: Config(Mod("Air", ModType.HUD), "barhud/air.json") {
+object Air: Config(Mod("Air", ModType.HUD, "/barhud.svg"), "barhud/air.json") {
 
     @HUD(name = "Hud")
     var hud = AirHud()

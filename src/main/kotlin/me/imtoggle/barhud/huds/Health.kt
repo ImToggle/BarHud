@@ -1,4 +1,4 @@
-package me.imtoggle.barhud.config
+package me.imtoggle.barhud.huds
 
 import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.Color
@@ -15,7 +15,7 @@ import net.minecraft.potion.Potion
 import kotlin.math.max
 
 
-object Health: Config(Mod("Health", ModType.HUD), "barhud/health.json") {
+object Health: Config(Mod("Health", ModType.HUD, "/barhud.svg"), "barhud/health.json") {
 
     @HUD(name = "Hud")
     var hud = HealthHud()

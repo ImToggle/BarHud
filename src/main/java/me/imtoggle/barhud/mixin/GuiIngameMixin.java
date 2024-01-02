@@ -1,6 +1,6 @@
 package me.imtoggle.barhud.mixin;
 
-import me.imtoggle.barhud.config.HotBar;
+import me.imtoggle.barhud.huds.HotBar;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.renderer.GlStateManager;

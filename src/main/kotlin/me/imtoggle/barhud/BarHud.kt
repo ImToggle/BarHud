@@ -1,6 +1,6 @@
 package me.imtoggle.barhud
 
-import me.imtoggle.barhud.config.*
+import me.imtoggle.barhud.huds.*
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 

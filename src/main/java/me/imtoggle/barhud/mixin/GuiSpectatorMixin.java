@@ -1,6 +1,6 @@
 package me.imtoggle.barhud.mixin;
 
-import me.imtoggle.barhud.config.HotBar;
+import me.imtoggle.barhud.huds.HotBar;
 import net.minecraft.client.gui.GuiSpectator;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;

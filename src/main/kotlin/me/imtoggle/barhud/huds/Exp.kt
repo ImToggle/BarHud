@@ -1,4 +1,4 @@
-package me.imtoggle.barhud.config
+package me.imtoggle.barhud.huds
 
 import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.*
@@ -10,7 +10,7 @@ import me.imtoggle.barhud.hud.*
 import net.minecraft.entity.player.EntityPlayer
 
 
-object Exp: Config(Mod("Experience", ModType.HUD), "barhud/experience.json") {
+object Exp: Config(Mod("Experience", ModType.HUD, "/barhud.svg"), "barhud/experience.json") {
 
     @HUD(name = "Hud")
     var hud = ExpHud()

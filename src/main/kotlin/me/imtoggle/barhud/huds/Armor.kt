@@ -1,4 +1,4 @@
-package me.imtoggle.barhud.config
+package me.imtoggle.barhud.huds
 
 import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.*
@@ -8,7 +8,7 @@ import cc.polyfrost.oneconfig.utils.dsl.*
 import me.imtoggle.barhud.hud.*
 import net.minecraft.entity.player.EntityPlayer
 
-object Armor: Config(Mod("Defence", ModType.HUD), "barhud/defence.json") {
+object Armor: Config(Mod("Defence", ModType.HUD, "/barhud.svg"), "barhud/defence.json") {
 
     @HUD(name = "Hud")
     var hud = DefenceHud()
