@@ -1,16 +1,15 @@
-package me.imtoggle.barhud.huds
+package me.imtoggle.barhud.hud
 
-import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.*
 import cc.polyfrost.oneconfig.config.core.OneColor
-import cc.polyfrost.oneconfig.config.data.*
+import cc.polyfrost.oneconfig.config.elements.SubConfig
 import cc.polyfrost.oneconfig.utils.dsl.*
-import me.imtoggle.barhud.hud.*
+import me.imtoggle.barhud.config.*
 import net.minecraft.entity.EntityLivingBase
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.item.ItemFood
 
-object Hunger: Config(Mod("Hunger", ModType.HUD, "/barhud.svg"), "barhud/hunger.json") {
+object Hunger: SubConfig("Hunger", "barhud/hunger.json") {
 
     @HUD(name = "Hud")
     var hud = HungerHud()
@@ -19,7 +18,7 @@ object Hunger: Config(Mod("Hunger", ModType.HUD, "/barhud.svg"), "barhud/hunger.
         initialize()
     }
 
-    class HungerHud: Hud() {
+    class HungerHud: Hud(1920 / 2f + 182 / 2f - 81 / 2f, 1080 - 39f + 9f) {
         @Color(
             name = "Normal Color"
         )

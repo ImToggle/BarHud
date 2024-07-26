@@ -1,4 +1,4 @@
-package me.imtoggle.barhud.hud
+package me.imtoggle.barhud.config
 
 import cc.polyfrost.oneconfig.config.core.OneColor
 

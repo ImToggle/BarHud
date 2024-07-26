@@ -10,9 +10,10 @@
     "GuiAccessor",
     "GuiIngameAccessor",
     "GuiIngameForgeMixin",
-    "GuiIngameMixin",
-    "GuiSpectatorAccessor",
-    "GuiSpectatorMixin"
+    "GuiSpectatorAccessor"
   ],
-  "verbose": true
+  "verbose": true,
+  "mixins": [
+    "HudGuiMixin"
+  ]
 }

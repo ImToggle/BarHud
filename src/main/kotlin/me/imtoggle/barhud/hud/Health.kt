@@ -1,21 +1,19 @@
-package me.imtoggle.barhud.huds
+package me.imtoggle.barhud.hud
 
-import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.Color
 import cc.polyfrost.oneconfig.config.annotations.HUD
 import cc.polyfrost.oneconfig.config.core.OneColor
-import cc.polyfrost.oneconfig.config.data.Mod
-import cc.polyfrost.oneconfig.config.data.ModType
+import cc.polyfrost.oneconfig.config.elements.SubConfig
 import cc.polyfrost.oneconfig.utils.dsl.VG
 import cc.polyfrost.oneconfig.utils.dsl.mc
-import me.imtoggle.barhud.hud.Bar
-import me.imtoggle.barhud.hud.Hud
+import me.imtoggle.barhud.config.Bar
+import me.imtoggle.barhud.config.Hud
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.potion.Potion
 import kotlin.math.max
 
 
-object Health: Config(Mod("Health", ModType.HUD, "/barhud.svg"), "barhud/health.json") {
+object Health: SubConfig("Health", "barhud/health.json") {
 
     @HUD(name = "Hud")
     var hud = HealthHud()
@@ -24,7 +22,7 @@ object Health: Config(Mod("Health", ModType.HUD, "/barhud.svg"), "barhud/health.
         initialize()
     }
 
-    class HealthHud: Hud() {
+    class HealthHud: Hud(1920 / 2f - 182 / 2f + 81 / 2f, 1080 - 39f + 9f) {
         @Color(
             name = "Normal Color"
         )
@@ -50,16 +48,9 @@ object Health: Config(Mod("Health", ModType.HUD, "/barhud.svg"), "barhud/health.
         val absorption = Bar()
 
         private fun getColor(): OneColor {
-            val wither = mc.thePlayer.getActivePotionEffect(Potion.wither)
-            val poison = mc.thePlayer.getActivePotionEffect(Potion.poison)
-            val heartcolor = if (poison != null) {
-                poisonColor
-            } else if (wither != null) {
-                witherColor
-            } else {
-                normalColor
-            }
-            return heartcolor
+            mc.thePlayer.getActivePotionEffect(Potion.poison)?.let { return poisonColor }
+            mc.thePlayer.getActivePotionEffect(Potion.wither)?.let { return witherColor }
+            return normalColor
         }
 
         override fun drawBars(vg: VG, example: Boolean) {

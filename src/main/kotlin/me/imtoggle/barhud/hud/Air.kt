@@ -1,17 +1,16 @@
-package me.imtoggle.barhud.huds
+package me.imtoggle.barhud.hud
 
-import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.*
 import cc.polyfrost.oneconfig.config.core.OneColor
-import cc.polyfrost.oneconfig.config.data.*
+import cc.polyfrost.oneconfig.config.elements.SubConfig
 import cc.polyfrost.oneconfig.utils.dsl.*
-import me.imtoggle.barhud.hud.*
+import me.imtoggle.barhud.config.*
 import net.minecraft.block.material.Material
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.util.MathHelper
 
 
-object Air: Config(Mod("Air", ModType.HUD, "/barhud.svg"), "barhud/air.json") {
+object Air: SubConfig("Air", "barhud/air.json") {
 
     @HUD(name = "Hud")
     var hud = AirHud()
@@ -20,7 +19,7 @@ object Air: Config(Mod("Air", ModType.HUD, "/barhud.svg"), "barhud/air.json") {
         initialize()
     }
 
-    class AirHud: Hud() {
+    class AirHud: Hud(1920 / 2f + 182 / 2f - 81 / 2f, 1080 - 49f + 9f) {
         @Color(
             name = "Color"
         )

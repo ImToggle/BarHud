@@ -1,6 +1,6 @@
 package me.imtoggle.barhud
 
-import me.imtoggle.barhud.huds.*
+import me.imtoggle.barhud.config.ModConfig
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 
@@ -12,11 +12,7 @@ object BarHud {
 
     @Mod.EventHandler
     fun onInit(event: FMLInitializationEvent) {
-        Air
-        Armor
-        Exp
-        Health
-        HotBar
-        Hunger
+        ModConfig.initialize()
     }
+
 }

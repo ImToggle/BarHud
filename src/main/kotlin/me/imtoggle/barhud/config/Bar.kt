@@ -1,4 +1,4 @@
-package me.imtoggle.barhud.hud
+package me.imtoggle.barhud.config
 
 import cc.polyfrost.oneconfig.config.core.OneColor
 import cc.polyfrost.oneconfig.gui.animations.Animation
@@ -20,7 +20,7 @@ open class Bar {
             lastPct = cPct
         }
         this.pct = barAnimation.get()
-        if (pct == 0f) return
+        if (pct < 0f) return
         val width = hud.width
         val height = hud.height
         val scissorHelper = ScissorHelper.INSTANCE

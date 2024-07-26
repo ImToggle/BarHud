@@ -1,14 +1,13 @@
-package me.imtoggle.barhud.huds
+package me.imtoggle.barhud.hud
 
-import cc.polyfrost.oneconfig.config.Config
 import cc.polyfrost.oneconfig.config.annotations.*
 import cc.polyfrost.oneconfig.config.core.OneColor
-import cc.polyfrost.oneconfig.config.data.*
+import cc.polyfrost.oneconfig.config.elements.SubConfig
 import cc.polyfrost.oneconfig.utils.dsl.*
-import me.imtoggle.barhud.hud.*
+import me.imtoggle.barhud.config.*
 import net.minecraft.entity.player.EntityPlayer
 
-object Armor: Config(Mod("Defence", ModType.HUD, "/barhud.svg"), "barhud/defence.json") {
+object Armor: SubConfig("Armor", "barhud/defence.json") {
 
     @HUD(name = "Hud")
     var hud = DefenceHud()
@@ -17,7 +16,7 @@ object Armor: Config(Mod("Defence", ModType.HUD, "/barhud.svg"), "barhud/defence
         initialize()
     }
 
-    class DefenceHud: Hud() {
+    class DefenceHud: Hud(1920 / 2f - 182 / 2f + 81 / 2f, 1080 - 49f + 9f) {
         @Color(
             name = "Color"
         )
